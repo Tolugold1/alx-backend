@@ -37,10 +37,9 @@ class Server:
             """implement get_page"""
             assert type(page) == int and page > 0
             assert type(page_size) == int and page_size > 0
-            stp = page
-            edf = page_size
-            t = index_range(stp, edf)
-            if (stp >= len(self.dataset())):
-                return []
+            stf, edf = index_range(page, page_size)
+            page_of_dataset = []
+            if (stf >= len(self.dataset())):
+                return page_of_dataset
             page_of_dataset = self.dataset()
-            return page_of_dataset[stp:edf]
+            return page_of_dataset[stf:edf]

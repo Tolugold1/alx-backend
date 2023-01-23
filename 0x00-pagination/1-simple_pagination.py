@@ -9,10 +9,11 @@ from typing import List
 
 def index_range(page: int, page_size: int) -> tuple:
     """indexing function"""
-    stp = (page - 1) * page_size #stp - start page
-    edp = (stp + page_size) #edp - end page
+    stp = (page - 1) * page_size  # stp - start page
+    edp = (stp + page_size)  # edp - end page
     t = (stp, edp)
     return t
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -34,12 +35,12 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """implement get_page"""
-            assert type(page) == int and page > 0
-            assert type(page_size) == int and page_size > 0
-            stf, edf = index_range(page, page_size)
-            page_of_dataset = []
-            if (stf >= len(self.dataset())):
-                return page_of_dataset
-            page_of_dataset = self.dataset()
-            return page_of_dataset[stf:edf]
+        """implement get_page"""
+        assert type(page) == int and page > 0
+        assert type(page_size) == int and page_size > 0
+        stf, edf = index_range(page, page_size)
+        page_of_dataset = []
+        if (stf >= len(self.dataset())):
+            return page_of_dataset
+        page_of_dataset = self.dataset()
+        return page_of_dataset[stf:edf]

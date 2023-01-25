@@ -2,7 +2,7 @@
 """
 caching system
 """
-BaseCaching = __import__("BaseCaching").BaseCaching
+from BaseCaching import BaseCaching
 
 
 class BasicCache(BaseCaching):

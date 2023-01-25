@@ -2,7 +2,7 @@
 """
 class LIFOCache
 """
-BaseCaching = __import__("BaseCaching").BaseCaching
+from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):

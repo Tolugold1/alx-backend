@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 caching system
 """
-from Base_caching import BaseCaching
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):

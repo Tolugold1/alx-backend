@@ -3,7 +3,7 @@
 class FIFOCache that inherits from
 BaseCaching and is a caching system
 """
-BaseCaching = __import__("BaseCaching").BaseCaching
+from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):

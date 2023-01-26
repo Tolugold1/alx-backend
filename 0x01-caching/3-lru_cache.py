@@ -13,17 +13,16 @@ class LRUCache(BaseCaching):
         """assign to the dictionary
         self.cache_data the item value
         for the key key"""
-        if key is None and item is None:
-            return 
-        if len(self.cache_data) < BaseCaching.MAX_ITEMS:
-            if key in self.cache_data:
-                del self.cache_data[key]
-            self.cache_data[key] = item
-        else:
-            first_key = list(self.cache_data.keys())[0]
-            del self.cache_data[first_key]
-            self.cache_data[key] = item
-            print(f"DISCARD: {first_key}")
+        if key and item:
+            if len(self.cache_data) < BaseCaching.MAX_ITEMS:
+                if key in self.cache_data:
+                    del self.cache_data[key]
+                self.cache_data[key] = item
+            else:
+                first_key = list(self.cache_data.keys())[0]
+                del self.cache_data[first_key]
+                self.cache_data[key] = item
+                print(f"DISCARD: {first_key}")
 
     def get(self, key):
         """return the value in
